@@ -22,7 +22,6 @@ export default function CaseStudy03Page() {
   return (
     <main className="min-h-screen bg-background">
       <article className="mx-auto max-w-3xl px-4 py-10 sm:py-16 prose prose-zinc dark:prose-invert prose-headings:scroll-mt-20">
-
         {/* Header */}
         <header className="mb-10 border-b pb-6">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
@@ -57,21 +56,22 @@ export default function CaseStudy03Page() {
           <h2>From Inspiration to Action</h2>
 
           <p>
-            In the previous posts, I shared the story of how Arduino Community Bangladesh 
-            started and how a lack of resources drove us to write. But inspiration alone 
-            cannot build a robot. You need the right tools.
+            In the previous posts, I shared the story of how Arduino Community
+            Bangladesh started and how a lack of resources drove us to write.
+            But inspiration alone cannot build a robot. You need the right
+            tools.
           </p>
 
           <p>
             Over the years, I have met countless students who ask,{" "}
-            <em>"Bhaiya, where do I start?"</em> or{" "}
-            <em>"How do I prepare for the Robot Olympiad?"</em>
+            <em>&quot;Bhaiya, where do I start?&quot;</em> or{" "}
+            <em>&quot;How do I prepare for the Robot Olympiad?&quot;</em>
           </p>
 
           <p>
-            The answer lies in these two books. They are not just textbooks; they are the 
-            documentation of our entire journey—designed to take you from zero knowledge 
-            to building innovation.
+            The answer lies in these two books. They are not just textbooks;
+            they are the documentation of our entire journey—designed to take
+            you from zero knowledge to building innovation.
           </p>
         </section>
 
@@ -92,18 +92,20 @@ export default function CaseStudy03Page() {
           </div>
 
           <p>
-            This is where it all begins. We wrote this book for the absolute beginner—whether 
-            you are a school student, a university fresher, or a hobbyist. If you have never 
-            written a line of code or held a microcontroller, this book is your starting point.
+            This is where it all begins. We wrote this book for the absolute
+            beginner—whether you are a school student, a university fresher, or
+            a hobbyist. If you have never written a line of code or held a
+            microcontroller, this book is your starting point.
           </p>
 
           <p>
-            <strong>What you will learn:</strong> Basics of electronics, understanding the 
-            Arduino environment, and your first “Hello World” in hardware.
+            <strong>What you will learn:</strong> Basics of electronics,
+            understanding the Arduino environment, and your first &quot;Hello
+            World&quot; in hardware.
           </p>
 
           <p>
-            <strong>Why it matters:</strong> It removes the fear of technology. 
+            <strong>Why it matters:</strong> It removes the fear of technology.
             It proves that hardware is easy.
           </p>
 
@@ -120,7 +122,10 @@ export default function CaseStudy03Page() {
 
         {/* Section 2 */}
         <section>
-          <h2>2. The Deep Dive: Hoye Otho Ekjon Problem Solver (হয়ে ওঠো একজন প্রবলেম সলভার)</h2>
+          <h2>
+            2. The Deep Dive: Hoye Otho Ekjon Problem Solver (হয়ে ওঠো একজন প্রবলেম
+            সলভার)
+          </h2>
 
           {/* Image */}
           <div className="not-prose my-6">
@@ -135,21 +140,22 @@ export default function CaseStudy03Page() {
           </div>
 
           <p>
-            Once you know how to blink a light, what’s next? This book is the bridge between 
-            a hobbyist and an engineer. This is the text that many World Robot Olympiad (WRO) 
-            and International Robot Olympiad (IRO) medalists have used to refine their logic.
+            Once you know how to blink a light, what&apos;s next? This book is
+            the bridge between a hobbyist and an engineer. This is the text that
+            many World Robot Olympiad (WRO) and International Robot Olympiad
+            (IRO) medalists have used to refine their logic.
           </p>
 
           <p>
-            <strong>What you will learn:</strong> The Hacking Mindset, Product Design, 
-            Advanced Sensors, IoT, and most importantly—how to solve real-world problems 
-            using technology.
+            <strong>What you will learn:</strong> The Hacking Mindset, Product
+            Design, Advanced Sensors, IoT, and most importantly—how to solve
+            real-world problems using technology.
           </p>
 
           <p>
-            <strong>Why it matters:</strong> It doesn’t just teach you how to build; 
-            it teaches you what to build and why. It prepares you for competitive robotics 
-            and the 4th Industrial Revolution.
+            <strong>Why it matters:</strong> It doesn&apos;t just teach you how
+            to build; it teaches you what to build and why. It prepares you for
+            competitive robotics and the 4th Industrial Revolution.
           </p>
 
           <p>
@@ -167,14 +173,16 @@ export default function CaseStudy03Page() {
         <section>
           <h2>Final Thoughts</h2>
           <p>
-            These books represent years of research, late nights in the lab, and the 
-            collective dream of Munem Shahriar, myself, and our team. We didn’t just write 
-            them to sell copies; we wrote them to spark a revolution.
+            These books represent years of research, late nights in the lab, and
+            the collective dream of Munem Shahriar, myself, and our team. We
+            didn&apos;t just write them to sell copies; we wrote them to spark a
+            revolution.
           </p>
 
           <p>
-            If you are dreaming of winning a Gold Medal for Bangladesh, or simply want to 
-            automate your home, grab these copies. Let the building begin.
+            If you are dreaming of winning a Gold Medal for Bangladesh, or
+            simply want to automate your home, grab these copies. Let the
+            building begin.
           </p>
         </section>
       </article>
