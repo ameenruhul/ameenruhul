@@ -212,7 +212,7 @@ education: [
 achievements: [
   {
     title: "Dean’s Award",
-    year: 2024,
+    year: 2020,
     issuer: "University of Rajshahi",
     description: ""
   },
@@ -271,6 +271,44 @@ achievements: [
     image: "pump.jpg",
     href: "/blog/project1"
   },
+
+
+  {
+    title: "Automated Irrigation System for BAT Bangladesh",
+    dates: "2025",
+    description:
+      "Designed and deployed a Smart-Agri pump controller using ESP32-S3, dual-sensor logic (soil moisture + air humidity), rugged enclosures, and off-grid solar power for field operations.",
+    image:
+      "https://lh3.googleusercontent.com/pw/AP1GczNISibPWWNnQAMKLMdMPGoDivRwqf9dHzwAfHBeQ9Tfw-pdoSfKdYGvHTnd-kO_poBxszAE-xEpLHMDIw1gVQ6ybkyihVXdGZoyaNy_MI6GrC6trfsoNRpA4fQdezlmL9ID0Bi7Aq2pQFlNM8b3NTcaVw=w642-h857-s-no-gm?authuser=0",
+    href: "/blog/project2",
+  },
+  {
+    title: "ESP32 vs. Fuel Thieves: Digitizing Legacy Trucks",
+    dates: "2024 – 2025",
+    description:
+      "Created a sub-$50 ESP32 telemetry retrofit for analog trucks to detect fuel theft using fuel-sender digitization, GPS+IMU context, and store-and-forward uploads—validated in a 6-week field test.",
+    image:
+      "https://lh3.googleusercontent.com/pw/AP1GczMytHSoMcUhky2NcgYmMPKVHj75BjU-q0ujURhGyWGutcL6osyuOeTAzU1WDwZXsc0piy4cfur1TGYLbfG2UJt3FIs__lR_Q3fLAnpXCuRDmAp8-VuGJTxdNGWHHTqUB5maiEZc6YHyb8JsBkcSuCNB5Q=w642-h857-s-no-gm?authuser=0",
+    href: "/blog/project3",
+  },
+  {
+    title: "Ruhul Bikes V1: Made in Rajshahi",
+    dates: "2024 – 2025",
+    description:
+      "Built a self-funded electric bike prototype in Rajshahi focused on high torque, delivery-rider utility, and safety-limited testing—turning a wild concept into a rideable machine.",
+    image:
+      "https://lh3.googleusercontent.com/pw/AP1GczPv6BQJLl9ZQtbFD_J8B82Qsl_UYZ3n2dJ39NxaVxMOlgMQuKbnQ6quCl1oaefRGom-OERSGIrXN92XHevU1Z9xcJzEmUPJ50pGqan64iVmLcZWCxgjyF_Ys89HatdvCSRNhbY48EC-U0BzRNHYRqQqeg=w642-h857-s-no-gm?authuser=0",
+    href: "/blog/project4",
+  },{
+    title: 'Digitizing the "Curing" Process for BAT Bangladesh',
+    dates: "2025",
+    description:
+      "Developed an IoT-enabled barn automation system for post-harvest tobacco curing, combining temperature/humidity control, damper automation, hybrid keypad+touchscreen UI, and a centralized analytics dashboard.",
+    image:
+      "https://lh3.googleusercontent.com/pw/AP1GczPUWJ1b5hEtfxQu2XqApI9-7bo8ZEUEs5QXA0gIj1PZCbTMD1uFGRK4v_YdatRIC9BD5tmCU_z50OPpzk86SYEvSNXSMQ6z3ad9HdN_-BLYv4pjBBRHO8AK6wgTgwA1lPfFFVZqtJo06jDm4OcrPVPR4g=w1142-h857-s-no-gm?authuser=0",
+    href: "/blog/project5",
+  }, 
+ 
   
 ],
  caseStudies: [
@@ -348,6 +386,23 @@ achievements: [
       },
     ],
   },
+  {
+  title: "Chapter 5: From a Wheelchair to a Badminton Court – My One-Year GBS Logbook",
+  href: "/blog/chapter5",
+  dates: "Dec 2024 – Dec 2025",
+  brief:
+    "A one-year personal logbook of my Guillain–Barré Syndrome journey—sudden paralysis, ICU fear, physiotherapy, faith, and a gradual return to movement, ending with me playing badminton again.",
+  tags: ["GBS Recovery", "Resilience", "Physiotherapy", "Faith", "Life Milestone"],
+  image:
+    "https://lh3.googleusercontent.com/pw/AP1GczPrYYAu3JC-UtGQ38M1dMmtcBlEZ3EYF65bpTPCiUFhSRZRvwl54WxP6GGlkcK3zw6EHB1IcCnWy-FEckoVFZzPuRcD8EYnTbD1Z7UonGNggMtnKFqugmahaAnPOAmSTu8tUfrwKTpGNDn1aM6WIJcNTA=w1142-h857-s-no-gm?authuser=0",
+  links: [
+    {
+      type: "Read Chapter",
+      href: "/blog/chapter5",
+      icon: Icons.globe,
+    },
+  ],
+},
   
 ] as const,
 } as const;

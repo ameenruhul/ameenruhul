@@ -124,120 +124,190 @@ export default function Page() {
       </section>
 
       {/* =========================
-          Projects Carousel (Embla)
-      ========================== */}
-      <section id="my-build-projects">
-        <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 13}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  I Like Building Things
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  My Hands-On Hardware & IoT Projects
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed">
-                  I’ve spent years building practical systems for agriculture,
-                  education, mobility and field operations.{" "}
-                  <br />
-                  Here are some of the things I built with my own hands.
-                </p>
-              </div>
-            </div>
-          </BlurFade>
-
-          <BlurFade delay={BLUR_FADE_DELAY * 14}>
-            <div className="max-w-[900px] mx-auto">
-              <EmblaCarousel
-                options={EMBLA_OPTIONS}
-                slides={DATA.buildProjects.map((proj) => (
-                  <div key={proj.title} className="px-2">
-                    <Link
-                      href={proj.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-2xl overflow-hidden border group hover:shadow-xl transition bg-background block"
-                    >
-                      <div className="aspect-video w-full overflow-hidden">
-                        <img
-                          src={proj.image}
-                          alt={proj.title}
-                          className="object-cover w-full h-full group-hover:scale-105 transition duration-300"
-                        />
-                      </div>
-                      <div className="p-5">
-                        <h3 className="text-xl font-semibold">{proj.title}</h3>
-                        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-                          {proj.description}
-                        </p>
-                        <p className="mt-2 text-xs text-zinc-500">
-                          {proj.dates}
-                        </p>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              />
-            </div>
-          </BlurFade>
+    Projects Carousel (Embla) – stacked preview style
+========================== */}
+<section id="my-build-projects">
+  <div className="space-y-12 w-full py-12">
+    <BlurFade delay={BLUR_FADE_DELAY * 13}>
+      <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <div className="space-y-2">
+          <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+            I Like Building Things
+          </div>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+            My Hands-On Hardware & IoT Projects
+          </h2>
+          <p className="text-muted-foreground md:text-xl/relaxed">
+            I’ve spent years building practical systems for agriculture, education,
+            mobility and field operations.{" "}
+            <br />
+            Here are some of the things I built with my own hands.
+          </p>
         </div>
-      </section>
+      </div>
+    </BlurFade>
 
-      {/* =========================
-          Case Studies Carousel (Embla) – flatter cards
+    <BlurFade delay={BLUR_FADE_DELAY * 14}>
+      <div className="max-w-[980px] mx-auto px-4">
+        {/* This wrapper creates the stacked preview feel */}
+        <div className="relative">
+          {/* fake “stack” cards behind the carousel */}
+          <div className="pointer-events-none absolute inset-0 flex justify-center">
+            <div className="relative w-full">
+              <div className="absolute left-1/2 top-3 h-[520px] w-[92%] -translate-x-1/2 rounded-3xl border border-zinc-200 bg-white/60 shadow-sm dark:border-zinc-800 dark:bg-zinc-950/40" />
+              <div className="absolute left-1/2 top-6 h-[520px] w-[86%] -translate-x-1/2 rounded-3xl border border-zinc-200 bg-white/40 shadow-sm dark:border-zinc-800 dark:bg-zinc-950/25" />
+            </div>
+          </div>
+
+          <EmblaCarousel
+            options={{
+              ...EMBLA_OPTIONS,
+              // keep peeking next/prev
+              align: "center",
+              containScroll: "trimSnaps",
+            }}
+            slides={DATA.buildProjects.map((proj) => (
+              // This width makes neighbors peek while keeping the active card centered
+              <div
+                key={proj.title}
+                className="px-3 md:px-4"
+                style={{ flex: "0 0 88%" }}
+              >
+                <Link
+                  href={proj.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-md transition hover:-translate-y-0.5 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-950"
+                >
+                  {/* Media: fixed height to avoid broken crops */}
+                  <div className="relative h-[360px] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                    <img
+                      src={proj.image}
+                      alt={proj.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                    {/* subtle top/bottom fades like modern cards */}
+                    <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black/10 to-transparent" />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6 md:p-7">
+                    <h3 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+                      {proj.title}
+                    </h3>
+
+                    <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                      {proj.description}
+                    </p>
+
+                    <div className="mt-5 flex items-center justify-between gap-4">
+                      <span className="text-xs text-zinc-500">{proj.dates}</span>
+
+                      <span className="inline-flex items-center rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white">
+                        Check it out
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="ml-2 h-4 w-4"
+                          aria-hidden="true"
+                        >
+                          <path d="M7 17L17 7" />
+                          <path d="M10 7h7v7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          />
+        </div>
+      </div>
+    </BlurFade>
+  </div>
+</section>
+
+
+            {/* =========================
+          Chapters Grid – Google-style cards
       ========================== */}
       <section id="case-studies" className="w-full py-12">
         <BlurFade delay={BLUR_FADE_DELAY * 16}>
-          <h2 className="text-xl font-bold text-center mb-6">Case Studies</h2>
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+              Research and technology
+            </h2>
+            <p className="mt-3 text-sm md:text-base text-zinc-600 dark:text-zinc-300">
+              Chapters of my journey — projects, communities, and milestones.
+            </p>
+          </div>
         </BlurFade>
 
         <BlurFade delay={BLUR_FADE_DELAY * 17}>
-          <div className="max-w-[900px] mx-auto">
-            <EmblaCarousel
-              options={EMBLA_OPTIONS}
-              slides={DATA.caseStudies.map((study) => (
-                <div key={study.title} className="px-2">
-                  <div className="group relative h-full">
-                    {/* Glow */}
-                    <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-500/15 via-emerald-400/10 to-rose-500/20 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
-
-                    <Link
-                      href={study.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative flex h-full flex-col sm:flex-row items-start gap-4 rounded-3xl border border-zinc-200/70 bg-white/80 p-4 sm:p-5 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-zinc-800/70 dark:bg-zinc-900/80"
-
-                    >
-                      {/* Thumbnail – shorter & fixed height */}
-                      <div className="flex-shrink-0 overflow-hidden rounded-2xl border border-zinc-200/60 bg-zinc-100 shadow-sm dark:border-zinc-700/70 dark:bg-zinc-800/80 w-full sm:w-40 md:w-48">
-                        <div className="h-28 sm:h-32 md:h-36">
-                          <img
-                            src={study.image}
-                            alt={study.title}
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Text content – more room */}
-                      <div className="flex flex-1 flex-col justify-center min-h-[110px]">
-                        <h3 className="text-base md:text-lg font-semibold leading-snug text-zinc-900 dark:text-zinc-50">
-                          {study.title}
-                        </h3>
-                        <p className="mt-2 text-xs md:text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                          {study.brief}
-                        </p>
-                      </div>
-                    </Link>
+          <div className="mx-auto mt-10 max-w-6xl px-4">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {DATA.caseStudies.map((study) => (
+                <Link
+                  key={study.title}
+                  href={study.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-950"
+                >
+                  {/* Image */}
+                  <div className="relative aspect-[16/9] w-full bg-zinc-100 dark:bg-zinc-900">
+                    <img
+                      src={study.image}
+                      alt={study.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
                   </div>
-                </div>
+
+                  {/* Bottom row */}
+                  <div className="flex items-center justify-between gap-3 px-5 py-4">
+                    <div className="min-w-0">
+                      <h3 className="text-base font-medium leading-snug text-zinc-900 dark:text-zinc-50">
+                        {study.title}
+                      </h3>
+                      {study.dates ? (
+                        <p className="mt-1 truncate text-sm text-zinc-500 dark:text-zinc-400">
+                          {study.dates}
+                        </p>
+                      ) : null}
+                    </div>
+
+                    {/* External link icon */}
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition group-hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:group-hover:bg-zinc-900">
+                      {/* Lucide "ArrowUpRight" icon (inline svg so no import needed) */}
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-4 w-4"
+                      >
+                        <path d="M7 17L17 7" />
+                        <path d="M10 7h7v7" />
+                      </svg>
+                    </span>
+                  </div>
+                </Link>
               ))}
-            />
+            </div>
           </div>
         </BlurFade>
       </section>
 
+
+      
       {/* Achievements Section */}
       <section id="achievements">
         <div className="flex flex-col gap-y-4 py-12">

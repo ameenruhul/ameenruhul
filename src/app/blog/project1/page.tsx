@@ -47,7 +47,7 @@ export default function Chapter5MuthoSechPage() {
         {/* Header */}
         <header className="mb-10 border-b pb-6">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
-            Chapter 5
+            Project Spotlight
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             MuthoSech – Putting Technology in the Farmer’s Hand
